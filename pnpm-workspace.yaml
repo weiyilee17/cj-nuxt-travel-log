@@ -1,0 +1,6 @@
+shellEmulator: true
+trustPolicy: no-downgrade
+trustPolicyIgnoreAfter: 525600 # 1 year in minutes
+allowBuilds:
+  esbuild: true
+  unrs-resolver: true
