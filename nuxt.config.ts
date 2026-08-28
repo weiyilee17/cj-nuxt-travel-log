@@ -1,6 +1,6 @@
 import tailwindcss from "@tailwindcss/vite";
 
-import env from "./lib/env";
+import "./lib/env";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -20,9 +20,5 @@ export default defineNuxtConfig({
     config: {
       standalone: false,
     },
-  },
-  runtimeConfig: {
-    TURSO_DATABASE_URL: env.TURSO_DATABASE_URL,
-    TURSO_AUTH_TOKEN: env.TURSO_AUTH_TOKEN,
   },
 });
