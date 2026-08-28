@@ -22,9 +22,7 @@ export default defineNuxtConfig({
     },
   },
   runtimeConfig: {
-    public: {
-      TURSO_DATABASE_URL: env.TURSO_DATABASE_URL,
-      TURSO_AUTH_TOKEN: env.TURSO_AUTH_TOKEN,
-    },
+    TURSO_DATABASE_URL: env.TURSO_DATABASE_URL,
+    TURSO_AUTH_TOKEN: env.TURSO_AUTH_TOKEN,
   },
 });
