@@ -6,11 +6,11 @@ import type { ZodObject, ZodRawShape } from "zod";
 import { ZodError } from "zod";
 
 export default function tryParseEnv<T extends ZodRawShape>(
-  EnvSchema: ZodObject<T>,
+  envSchema: ZodObject<T>,
   buildEnv: Record<string, string | undefined> = process.env,
 ) {
   try {
-    EnvSchema.parse(buildEnv);
+    envSchema.parse(buildEnv);
   }
   catch (error) {
     if (error instanceof ZodError) {
