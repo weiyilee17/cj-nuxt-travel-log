@@ -1,6 +1,4 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
   <div class="hero bg-base-300 container mx-auto mt-4">
@@ -12,15 +10,10 @@
         <p class="py-6">
           Keep track of your travels and adventures with this simple travel log
         </p>
-        <button class="btn btn-accent">
-          Sign In With Github
-          <Icon name="tabler:brand-github" size="24" />
-        </button>
+        <AuthButton />
       </div>
     </div>
   </div>
 </template>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
