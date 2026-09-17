@@ -3,7 +3,34 @@ const authStore = useAuthStore();
 </script>
 
 <template>
+  <details
+    v-if="!authStore.loading && authStore.user"
+    class="dropdown dropdown-end"
+  >
+    <summary class="btn m-1">
+      <div v-if="authStore.user.image" class="avatar">
+        <div class="w-7 rounded-full">
+          <img :src="authStore.user.image" :alt="authStore.user.name">
+        </div>
+      </div>
+      {{ authStore.user.name }}
+    </summary>
+    <!-- TODO: check why we need the text-base-content class to make the sign out text correct in light mode -->
+    <ul
+      class="menu dropdown-content bg-base-200 rounded-box z-1 w-48 p-2 shadow-sm text-base-content"
+    >
+      <li>
+        <NuxtLink to="/sign-out">
+          <Icon name="tabler:logout-2" size="24" />
+          Sign Out
+        </NuxtLink>
+      </li>
+    </ul>
+  </details>
+
+  <!-- TODO: check all the colors in light mode in general, the loading color doesn't feel right -->
   <button
+    v-else
     class="btn btn-accent"
     :disabled="authStore.loading"
     @click="authStore.signIn"
