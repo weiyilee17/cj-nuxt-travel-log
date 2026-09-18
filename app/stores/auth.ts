@@ -7,8 +7,9 @@ export const useAuthStore = defineStore("authStore", () => {
 
   const user = computed(() => session.value.data?.user);
 
+  // TODO: This is causing hydration error for auth button. Take a look if doesn't get fixed in the future
   const loading = computed(
-    () => session.value.isPending || session.value.isPending,
+    () => session.value.isPending || session.value.isRefetching,
   );
 
   async function signIn() {
