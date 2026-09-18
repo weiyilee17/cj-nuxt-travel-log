@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup lang="ts">
+const authStore = useAuthStore();
+</script>
 
 <template>
   <div class="hero bg-base-300 container mx-auto mt-4">
@@ -10,7 +12,10 @@
         <p class="py-6">
           Keep track of your travels and adventures with this simple travel log
         </p>
-        <AuthButton />
+        <AuthButton v-if="!authStore.user" />
+        <NuxtLink v-else to="/dashboard" class="btn btn-primary">
+          Start Logging
+        </NuxtLink>
       </div>
     </div>
   </div>
